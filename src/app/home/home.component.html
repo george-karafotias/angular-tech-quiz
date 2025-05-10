@@ -1,0 +1,29 @@
+<div class="container" *ngIf="categories">
+    <h2>Take a Tech Quiz!</h2>
+
+    <div>
+        <label for="categoriesSelect">Category:</label>
+        <select id="categoriesSelect" [(ngModel)]="selectedCategory">
+            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="difficultySelect">Difficulty:</label>
+        <select id="difficultySelect" [(ngModel)]="selectedDifficulty">
+            <option *ngFor="let difficulty of difficulties" [value]="difficulty">{{ difficulty }}</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="tagsTextArea">Tags:</label>
+        <textarea id="tagsTextArea" [(ngModel)]="tags" rows="5" cols="30"></textarea>
+    </div>
+
+    <div>
+        <label for="limitInput">Limit:</label>
+        <input id="limitInput" type="number" min="5" max="20" step="1" [(ngModel)]="limit">
+    </div>
+
+    <button (click)="startQuiz()">Start!</button>
+</div>

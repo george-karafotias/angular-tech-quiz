@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Question {{currentQuestionNumber}} of {{numberOfQuestions}}</h2>
+
+    <div class="question">{{currentQuestion.question}}</div>
+
+    <div *ngFor="let answer of answers">
+        <label>
+            <input type="checkbox" [value]="answer" (change)="onCheckboxChange($event)" />
+            {{ answer }}
+        </label>
+    </div>
+
+    <button *ngIf="currentQuestionNumber < numberOfQuestions" (click)="proceed()">Next</button>
+    <button *ngIf="currentQuestionNumber >= numberOfQuestions" (click)="submit()">Submit</button>
+</div>
