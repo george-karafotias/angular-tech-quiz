@@ -24,6 +24,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/angular-tech-quiz",
+            "baseHref": "/angular-tech-quiz/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
